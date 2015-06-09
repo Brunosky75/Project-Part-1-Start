@@ -1,0 +1,52 @@
+/*
+
+Your styles go here!
+
+Hint! You'll probably want to start by styling:
+  * <body>
+  * <article>
+  * <h1>
+  * <img>
+
+I've left some boilerplate below for you.
+
+*/
+
+body {
+	max-width: 50em;
+	margin: 0 auto;
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1 {
+	text-align: center;
+}
+
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 5px;
+}
+
+p {
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 1em;
+}
+a {
+	margin: 8px;
+	color: black;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+figcaption {
+	 text-align: center;
+	 font-size: 0.7em;
+}
+article {
+	 border-bottom: 2px solid #ddd;
+}

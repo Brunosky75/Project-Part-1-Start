@@ -1,5 +1,5 @@
 /*
- After you have changed the settings at "Your code goes here",
+ After you have changed the settings under responsive_images
  run this with one of these options:
   "grunt" alone creates a new, completed images directory
   "grunt clean" removes the images directory
@@ -14,9 +14,21 @@ module.exports = function(grunt) {
         options: {
           engine: 'im',
           sizes: [{
-            
-            width: '800px',
-            quality:80
+            width: 1600,
+            suffix: "lg2x",
+            quality: 50
+          },{
+            width: 1280,
+            suffix: "sm2x",
+            quality: 40
+          },{
+            width: 640,
+            suffix: "sm1x",
+            quality: 60
+          },{
+            width: 800,
+            suffix: "lg1x",
+            quality: 40
           }]
         },
 
@@ -28,7 +40,7 @@ module.exports = function(grunt) {
           expand: true,
           src: ['*.{gif,jpg,png}'],
           cwd: 'images_src/',
-          dest: 'images/'
+          dest: 'imagess/'
         }]
       }
     },
@@ -49,22 +61,12 @@ module.exports = function(grunt) {
       },
     },
 
-    /* Copy the "fixed" images that don't go through processing into the images/directory */
-    copy: {
-      dev: {
-        files: [{
-          expand: true,
-          src: 'images_src/fixed/*.{gif,jpg,png}',
-          dest: 'images/'
-        }]
-      },
-    },
   });
-  
+
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-mkdir');
-  grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
+  grunt.registerTask('default', ['clean', 'mkdir', 'responsive_images']);
 
 };

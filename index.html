@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head id="header1" itemscope>
   <meta name="description" content="Udacity Responsive Images course project" />
   <meta name="author" content="Bruno Jimenez">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta itemprop="name" content="Udacity Responsive Images course project">
+  <meta itemprop="image" content="images/icon.png">
   <meta name="mobile-web-app-capable" content="yes">
   <meta id="theme-color" name="theme-color" content="#307699">
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <base target="_blank">
 
@@ -18,74 +20,118 @@
 </head>
 
 <body>
-
   <h1>My responsive blog</h1>
 
   <article>
-
-    <div class="delayed-image-load" data-src="img/sfo-{width}.jpg"></div>
-
-<script src="node_modules/imager.js"></script>
-<script>
-    var images = document.querySelectorAll('.delayed-image-load');
-    var options = {
-        availableWidths: [ 480, 800 ],
-        strategy: 'replacer',
-        replacementDelay: 200
-    }
-
-    Imager.init(images, options);
-</script>
-
-
-    <picture><img src="images/still_life-800.jpg" alt="Natura Morta"></picture>
+    <figure>
+      <picture>
+        <source media="(min-width: 800px)" srcset="images/800/still_life-800lg1x.jpg 1x, images/800/still_life-1600lg2x.jpg 2x" />
+        <source media="(min-width: 640px)" srcset="images/640/still_life-640sm1x.jpg 1x, images/640/still_life-1280sm2x.jpg 2x" />
+        <img src="images/still_life-640.jpg" alt="Natura Morta">
+      </picture>
+      <figcaption>Natura Morta</figcaption>
+    </figure>
 
     <h2>My story</h2>
     
-    <p>I love cheese, especially manchego swiss. ☺ Fromage queso jarlsberg cheesy feet emmental cottage cheese camembert de normandie bocconcini. Cottage cheese everyone loves cauliflower cheese rubber cheese squirty cheese halloumi cow fondue. Bocconcini cheese and biscuits everyone loves fondue red leicester st. agur blue cheese rubber cheese ricotta. Cheesy grin mozzarella.</p>
+    <p>It took me WAYY more time that I was expecting to refine this blog page. But I guess this is the way to practice... yo have to experience some frustration. Specifically, I coudn't make Imager.js to work. OF course I will try again... sooner or later ☺.</p>
     
-    <picture><img src="images/horses-800.jpg" alt="Scenery with horses"></picture>
+    <figure>
+      <picture>
+        <source media="(min-width: 800px)" srcset="images/800/horses-800lg1x.jpg 1x, images/800/horses-1600lg2x.jpg 2x" />
+        <source media="(min-width: 640px)" srcset="images/640/horses-640sm1x.jpg 1x, images/640/horses-1280sm2x.jpg 2x" />
+        <img src="images/horses-640.jpg" alt="Scenery with horses">
+      </picture>     
+      <figcaption>Scenery with horses</figcaption>
+    </figure>
+  
     
-    <p>Bocconcini swiss cut the cheese. Manchego boursin smelly cheese cheesy grin squirty cheese mozzarella cheddar hard cheese. Manchego roquefort camembert de normandie cheese slices mascarpone cow cheesy feet airedale. Port-salut jarlsberg gouda port-salut port-salut cheese on toast.</p>
+    <p>I used Grunt to resize the pictures, I made 4 version of each: 640 and 800 px wide, both in 1X and 2X pixel density. I found this way to manage the pictures unnecessary long, verbose and error prone, tough. I think sooner or later some smarter way will be implemented. I really hope so.</p>
     
-    <p>Manchego cheese strings hard cheese. Say cheese swiss cheese strings squirty cheese mozzarella feta the big cheese halloumi. Cheddar cheese and biscuits cut the cheese queso hard cheese red leicester parmesan st. agur blue cheese. Smelly cheese caerphilly hard cheese cream cheese cream cheese the big cheese feta squirty cheese. Babybel fromage edam lancashire.</p>
-    
-    <picture><img src="images/volt-800.jpg" alt="Caution: High Voltage Here!"></picture>
-    
-    <p>Edam parmesan smelly cheese. Dolcelatte say cheese cheesy feet lancashire cow boursin stinking bishop brie. Stilton cheese strings say cheese pecorino cheeseburger fromage frais cauliflower cheese manchego. St. agur blue cheese ricotta stinking bishop queso camembert de normandie manchego cheese triangles fondue. Gouda.</p>
-    
-    <picture><img src="images/cockatoos-800.jpg" alt="white birds"></picture>
-    
-    <p>Babybel cream cheese cheese on toast. Brie fromage swiss cheese and biscuits hard cheese babybel bocconcini brie. Cheesy grin swiss cheese strings paneer lancashire cauliflower cheese cheese on toast caerphilly. Queso queso cheese and wine taleggio mascarpone cheeseburger.</p>
-    
-    <p>Rubber cheese lancashire stinking bishop. Paneer bocconcini bocconcini melted cheese brie blue castello mascarpone when the cheese comes out everybody's happy. Mozzarella st. agur blue cheese hard cheese smelly cheese gouda ricotta hard cheese cheese and wine. Fromage frais pecorino airedale caerphilly danish fontina everyone loves.</p>
-    
-    <p>Cheddar the big cheese fromage frais. Stinking bishop dolcelatte cow pecorino who moved my cheese bavarian bergkase cheese slices who moved my cheese. Cheeseburger roquefort cheese and biscuits queso queso smelly cheese roquefort red leicester. Fromage squirty cheese macaroni cheese melted cheese stilton roquefort cheese and biscuits.</p>
-    
-    <p>St. agur blue cheese cheese and wine say cheese. Goat cottage cheese brie cheese triangles say cheese when the cheese comes out everybody's happy stinking bishop dolcelatte. Parmesan say cheese cream cheese goat cauliflower cheese st. agur blue cheese cheese slices hard cheese. Cheese triangles.</p>
-    
-    <picture><img src="images/postcard-800.jpg" alt="ancient paper"></picture>
-    
-    <p>Pecorino pepper jack cheesy feet. Smelly cheese cauliflower cheese fromage halloumi cream cheese who moved my cheese fromage fondue. Feta danish fontina cheesy grin mozzarella fromage cheesy grin airedale paneer. Cheddar halloumi cheese and biscuits jarlsberg cheese and biscuits cheese and biscuits squirty cheese.</p>
-    
-    <picture><img src="images/grasshopper-800.jpg" alt="green grasshopper"></picture>
-    
-    <p>Babybel cream cheese cheese on toast. Brie fromage swiss cheese and biscuits hard cheese babybel bocconcini brie. Cheesy grin swiss cheese strings paneer lancashire cauliflower cheese cheese on toast caerphilly. Queso queso cheese and wine taleggio mascarpone cheeseburger.</p>
-    
-    <picture><img src="images/sfo-800.jpg" alt="plane view"></picture>
-    
-    <p>Say cheese swiss cheesy grin. Cheese on toast queso bocconcini cheeseburger fondue manchego smelly cheese port-salut. Cream cheese cheese and wine airedale cheeseburger chalk and cheese cauliflower cheese fondue smelly cheese. Queso manchego.</p>
-    
-    <picture><img src="images/rosella-800.jpg" alt="red bird"></picture>
+    <p>And by the way, the code provided in the Grountfile.js is wrong!! IT took me a while to find the problem... the commas is the suffix description must be double commas!! Instead there's single commas and the code doesn't work. Now, my Grountfile can make 4 version of the same picture in one passage, like is suppose to work!</p>
 
-    <p>Paneer st. agur blue cheese bocconcini. The big cheese chalk and cheese cheese and biscuits cream cheese cheese triangles mascarpone everyone loves rubber cheese. Stinking bishop manchego the big cheese lancashire hard cheese the big cheese danish fontina squirty cheese. Cheesy feet croque monsieur boursin squirty cheese cheddar boursin boursin pepper jack. Squirty cheese halloumi camembert de normandie macaroni cheese.</p>
+      <figure>  
+        <picture>
+          <source media="(min-width: 800px)" srcset="images/800/volt-800lg1x.jpg 1x, images/800/volt-1600lg2x.jpg 2x" />
+          <source media="(min-width: 640px)" srcset="images/640/volt-640sm1x.jpg 1x, images/640/volt-1280sm2x.jpg 2x" />
+          <img src="images/volt-640.jpg" alt="Beware: High Voltage HERE!">
+        </picture>        
+        <figcaption>Beware: High Voltage HERE!</figcaption>
+      </figure>
+  
+    <p>I was exciting to test the complex media query with different resolution, pixel density and a fallback image! Especially to test the actual responsiveness with mobile devices!</p>
+    
+    <figure>
+      <picture>
+        <source media="(min-width: 800px)" srcset="images/800/cockatoos-800lg1x.jpg 1x, images/800/cockatoos-1600lg2x.jpg 2x" />
+        <source media="(min-width: 640px)" srcset="images/640/cockatoos-640sm1x.jpg 1x, images/640/cockatoos-1280sm2x.jpg 2x" />
+        <img src="images/cockatoos-640.jpg" alt="white birds">
+      </picture>
+      <figcaption>Cockatoos</figcaption>    
+    </figure>
 
-    <i class="fa fa-twitter"></i>
+    <p>I even implemented some basic type of art-direction! The horses image for the low resolution version is cropped!</p>
+    
+    <p>Among the many things I've realized, is that the order of the source queries matter! The first resolution that is found, wins, so, I have to chance my code accordingly, by query first the higher resolution, and then the lower ones.</p>
+    
+   <figure>
+      <picture>
+        <source media="(min-width: 800px)" srcset="images/800/postcard-800lg1x.jpg 1x, images/800/postcard-1600lg2x.jpg 2x" />
+        <source media="(min-width: 640px)" srcset="images/640/postcard-640sm1x.jpg 1x, images/640/postcard-1280sm2x.jpg 2x" />
+        <img src="images/postcard-640.jpg" alt="Old Postcard">
+      </picture>
+      <figcaption>Old Postcard</figcaption>
+    </figure>
+    
+    <p>ON the bottom of the page, I put the links and the logos for the social medias. The links didn't look good, tough: in blue color and underlined. So, I modify the CSS code and make it look better.</p>
+    
+    <figure>
+      <picture>
+        <source media="(min-width: 800px)" srcset="images/800/grasshopper-800lg1x.jpg 1x, images/800/grasshopper-1600lg2x.jpg 2x" />
+        <source media="(min-width: 640px)" srcset="images/640/grasshopper-640sm1x.jpg 1x, images/640/grasshopper-1280sm2x.jpg 2x" />
+        <img src="images/grasshopper-640.jpg" alt="Cute grasshopper">
+      </picture>
+      <figcaption>Cute Grasshopper</figcaption>
+    </figure>
+     
+    <p>To improve the pictures layout, I put a captionon the bottom, I centered it and make the font smaller. Besides, I round the image corners. </p>
+    
+    <figure>
+      <picture>
+        <source media="(min-width: 800px)" srcset="images/800/sfo-800lg1x.jpg 1x, images/800/sfo-1600lg2x.jpg 2x" />
+        <source media="(min-width: 640px)" srcset="images/640/sfo-640sm1x.jpg 1x, images/640/sfo-1280sm2x.jpg 2x">
+        <img src="images/sfo-640.jpg" alt="Airplane view" />
+      </picture>
+      <figcaption>Airplane view</figcaption>
+    </figure>
+    
+    <p>Future work: get more efficient in writing code for dinamically resizing pictures. I found there's a bunch of wervices on the web that can make the task way less daunting, but they are not easy to understand and implement. Besides, some of them are paid services, and they need to store my pictures in their services... not in ideal solution.</p>
+    
+    <figure>
+      <picture>
+        <source media="(min-width: 800px)" srcset="images/800/rosella-800lg1x.jpg 1x, images/800/rosella-1600lg2x.jpg 2x" />
+        <source media="(min-width: 640px)" srcset="images/640/rosella-640sm1x.jpg 1x, images/640/rosella-1280sm2x.jpg 2x" />
+        <img src="images/rosella-640.jpg" alt="Rosella bird">
+      </picture>
+      <figcaption>Rosella bird</figcaption>
+    </figure>
+
+    <p>Final test: all the pictures resize correctly. The page size for viewport resolution below 640px is 0.41 MB, wich is great. It also means that all the fallback pictures are chosen correctly. At resolutions between 640 and 800px wide (DPR 2x) the pagebyte is 1.09 MB, with retina resolution pictures. At resolution higher than 800 px wide (DPR 2x) the pagebyte is 1.79 MB with retina images.</p>
+    <p>Lastly, the code was verified and amended until both the HTML and the CSS code where free of errors. I didn't wuite understand the itemprop error part, anyway, but I fixed it too! :-) </p>
 
   </article>
 
-  <br>
+ <footer>
+    <div id="social">
+      <a href="https://twitter.com/Astrogim" class="fa fa-twitter fa-2x"> Twitter</a>
+      <a href="https://digg.com" class="fa fa-digg fa-2x"> Digg</a>
+      <a href="https://www.facebook.com/bruno.jimenez.5036" class="fa fa-facebook fa-2x"> Facebook</a>
+      <a href="https://plus.google.com/104386967904986330137/posts" class="fa fa-google-plus fa-2x"> Google+</a>
+    </div>
+ </footer>
+
   <a href="//github.com/udacity/responsive-images/tree/master/project/start" title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
+  <br />
 
   <script src="http://udacity.github.io/responsive-images/project/project-grader.js"></script>
   <script async src="http://udacity.github.io/frontend-grading-engine/ud-grading-engine-v0.1.js"></script>

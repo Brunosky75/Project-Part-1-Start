@@ -1,32 +1,66 @@
-/*
+[class*="zocial-"] {
+  color: black;
+  display: inline-block;
+  font-family: 'zocial', sans-serif;
+  text-shadow: 3px 3px 3px #aaa;
+  width: 2em;
+}
 
-Your styles go here!
+a {
+  margin: 8px;
+  color: black;
+  text-decoration: none;
+}
 
-Hint! You'll probably want to start by styling:
-  * <body>
-  * <article>
-  * <h1>
-  * <img>
+div#social a {
+  margin: 1em 1em 0 0;
+}
 
-I've left some boilerplate below for you.
+div#social a:last-of-type {
+  margin: 0;
+}
 
-*/
+article {
+  margin: 0 auto;
+  max-width: 50em;
+  border-bottom: 1px solid #ddd;
+}
 
 body {
-	max-width: 50em;
+  font-family: sans-serif;
+  margin: 2em;
+}
 
+div#social {
+  line-height: 2em;
+}
+
+figcaption {
+  padding: 1em 0;
+  text-align: center;
+  font-size: 0.7em;
+}
+
+figure {
+  margin: 1em 0 1em 0;
+}
+
+footer {
+  margin: 0 auto;
+  width: 800px;
+}
+
+header {
+  margin: 0 auto;
+  width: 800px;
 }
 
 h1 {
-	text-align: center;
-}
-
-picture {
-	max-width: 100%;
+  margin: 0 auto 1em auto;
+  width: 800px;
 }
 
 img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 5px;
+  max-width: 100%;
+  border-radius: 5px;
 }
